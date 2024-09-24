@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}Welcome{% endblock title %}
+  
+{% block content %}
+<div class="card p-3" style="background: linear-gradient(rgba(255, 181, 36, 0.7), rgba(255, 181, 36, 0.7));">
+    <h1 data-aos="fade-up" style="text-align:center; border:none;">Signup</h1>
+<form action="/auth/signup/" method="post"style="width:300px;
+padding-top:50px; margin:auto; text-align:center; color:black;">{% csrf_token %}
+
+{% for message in messages  %}
+<div class="alert alert-{{message.tags}}alert-dismissible fade show" role="alert">
+    <strong>{{message}}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+    
+
+
+            {% endfor %}
+<br>
+<label for="email">Email</label>   
+<div class="form-group">
+    <input type="email" class="form-control p-2" id="email" name="email" required>
+</div>
+<label for="pass1">Password</label>
+<div class="form-group">
+    <input type="password" class="form-control p-2" id="pass1" name="pass1" required>
+
+</div>
+<label for="pass2">Confirm Password</label>
+<div class="form-group">
+    <input type="password" class="form-control p-2" id="pass2" name="pass2" required>
+
+</div>
+<br>
+<button type="submit" class="btn btn-dark">SignIn</button>
+<br>
+Already A User? <a href="/auth/login">Login</a>
+
+
+</form>    
+</div>
+
+
+{% endblock content %}
