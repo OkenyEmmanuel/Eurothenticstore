@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path 
-from django.contrib import messages
+from django.contrib import messages 
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -78,20 +79,8 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME':'d70vcl35i3q9gj',
-        'USER':'u3gb0je6j0nnke',
-        'PASSWORD':'p41600c8d82d66edc83dc411a4829225a0a6c525cb93e1884ed5b30e35e20aa9e',
-        'HOST':'cbhk6rs82poqi7.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com',
-        'PORT':'5432',
-               
-    }
+    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'), conn_max_age=600)
 }
-
-import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
 
 
 # Password validation
