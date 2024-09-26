@@ -40,7 +40,7 @@ Home
 
         {% for i in product %}
         <div class="col-md-3 mt-3">
-          <img src="{{i.image}}" class="card-img-top" alt="not found" height="300px" width="150px" />
+          <img src="{{i.image.url}}" class="card-img-top" alt="not found" height="300px" width="150px" />
           <div class="card-body">
             <h5 class="card-title mt-2" id="namepr{{i.id}}">{{i.product_name}}</h5>
             <p class="card-text">{{i.desc|slice:"0:53"}}...</p>
