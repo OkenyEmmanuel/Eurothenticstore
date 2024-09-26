@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-9ords2%1&%lw!9b%g1)c)*1r#(_%-$-xctg57wl@_sy0)@lwf+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['eurothenticstore-6467dcf854b5.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['eurosthenticstore.com', '127.0.0.1']
 
 
 # Application definition
@@ -147,7 +147,7 @@ STATICFILES_DIRS = [
 
 
 
-MEDIA_URL = 'eurothenticstore/media/'
+MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
