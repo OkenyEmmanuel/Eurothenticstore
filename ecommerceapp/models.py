@@ -17,7 +17,7 @@ class Product(models.Model):
     subcategory=models.CharField(max_length=50,default="")
     price=models.IntegerField(default=0)
     desc=models.CharField(max_length=300)
-    image=models.ImageField(upload_to='images/images')
+    image=models.ImageField(upload_to='images/')
     
     
     def __str__(self):
