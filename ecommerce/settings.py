@@ -157,7 +157,7 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': 'dK6UYkuufwSK79ppJPKOABAUmXw'
 }
 
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudStorage'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 MEDIA_URL = '/media/'
 
